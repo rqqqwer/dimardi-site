@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DIMARDI
 
-## Getting Started
+A frontend prototype built with Next.js App Router, TypeScript and Tailwind CSS. It includes a homepage, watch catalogue, new arrivals, watch detail previews, about, sell your watch, contact and draft information pages.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. If Turbopack is restricted by your environment, use `npm run dev -- --webpack`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+If Turbopack cannot open its local worker port, `npm run build -- --webpack` builds the same application with webpack.
 
-To learn more about Next.js, take a look at the following resources:
+## Editing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Contact information:** `lib/siteConfig.ts` contains `email`, `phoneDisplay` and `phoneHref`. All contact components and watch enquiries use these values. Update this file to change the email or phone number across the site.
+- **Navigation:** `mainNavigation` in `lib/siteConfig.ts`.
+- **Watch preview IDs:** `lib/watches.ts`. These are placeholders, not actual inventory.
+- **Watch cards and image placeholders:** `components/ProductCard.tsx` and `components/WatchPlaceholder.tsx`.
+- **Page content:** `app/<route>/page.tsx`. Watch details use `app/watches/[slug]/page.tsx`.
+- **Shared styling:** `app/globals.css`. Existing typography uses local system fonts and requires no external font downloads.
+- **Header/footer:** shared through `app/layout.tsx`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Prototype behaviour
 
-## Deploy on Vercel
+All product names, specifications and prices are placeholders. Filter/sort controls are disabled and labelled as a collection preview. The sell enquiry form validates required fields and displays a demonstration confirmation; it does not send or save data, and photo upload is a visual placeholder. Social links remain placeholders.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Shipping, returns, terms and privacy content is draft information. No database, authentication, backend submission service, payments or cart is included.

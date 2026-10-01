@@ -1,9 +1,9 @@
 // Update contact information here; every page and contact link uses this file.
 export const siteConfig = {
   name: "DIMARDI",
-  email: "your-email@example.com",
-  phoneDisplay: "+371 XX XXX XXX",
-  phoneHref: "+371XXXXXXXX",
+  email: "dimardi.eu@gmail.com",
+  phoneDisplay: "+371 22073279",
+  phoneHref: "+37122073279",
 };
 
 export const mainNavigation = [
