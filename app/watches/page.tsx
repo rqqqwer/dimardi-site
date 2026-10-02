@@ -6,14 +6,14 @@ import CatalogueControls from "@/components/CatalogueControls";
 export const metadata: Metadata = {
   title: "Watches",
   description:
-    "Explore the DIMARDI pre-owned watch collection preview and individual watch details.",
+    "Explore the DIMARDI watch collection preview, with a focus on brand-new pieces and clear listing information.",
 };
 export default function WatchesPage() {
   return (
     <>
       <PageHero
         title="WATCHES"
-        intro="Explore our curated selection of pre-owned watches. Each piece is individually selected and presented with clear information about its condition, history and specifications."
+        intro="Explore our curated selection of watches, with a focus on brand-new pieces. Each watch is individually selected and presented with clear information about its condition and specifications."
         breadcrumbs={[{ label: "Watches" }]}
         eyebrow="THE COLLECTION"
       />

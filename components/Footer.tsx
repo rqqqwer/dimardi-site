@@ -38,7 +38,7 @@ export default function Footer() {
               DIMARDI<span className="logo-dot">.</span>
             </Link>
             <p>
-              Pre-owned and carefully selected watches.
+              Carefully selected watches.
               <br />A considered approach to time.
             </p>
           </div>

@@ -16,7 +16,7 @@ export default function Hero() {
             WITH CARE.
           </h1>
           <p className="hero-description">
-            Pre-owned and carefully selected watches.
+            Carefully selected watches, with a focus on brand-new pieces.
           </p>
           <Link className="button button-dark" href="/watches">
             EXPLORE WATCHES <span aria-hidden="true">↗</span>

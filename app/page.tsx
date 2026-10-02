@@ -39,7 +39,7 @@ export default function Home() {
         </div>
         <div>
           <p>
-            At DIMARDI, we focus on carefully selected pre-owned watches and
+            At DIMARDI, we focus primarily on brand-new watches and
             straightforward personal service.
           </p>
           <Link className="text-link" href="/about">

@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: { default: "DIMARDI | Pre-Owned Watches", template: "%s | DIMARDI" },
+  title: { default: "DIMARDI | Carefully Selected Watches", template: "%s | DIMARDI" },
   description:
-    "Pre-owned and carefully selected watches. Discover the DIMARDI collection.",
+    "Discover carefully selected watches at DIMARDI, with a focus on brand-new pieces and personal service.",
 };
 
 export default function RootLayout({

@@ -3,14 +3,29 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WatchPlaceholder from "@/components/WatchPlaceholder";
+import WatchGallery from "@/components/WatchGallery";
 import { placeholderWatches } from "@/lib/watches";
 import { siteConfig } from "@/lib/siteConfig";
 
-export const metadata: Metadata = {
-  title: "Watch Preview",
-  description:
-    "DIMARDI watch listing preview. Specifications, condition and pricing will be added when inventory is available.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const watch = placeholderWatches.find((watch) => watch.slug === slug);
+  if (watch?.photos.length) {
+    return {
+      title: watch.soldOut ? "Watch — Sold Out" : "Watch",
+      description: watch.description || "DIMARDI watch photos.",
+    };
+  }
+  return {
+    title: "Watch Preview",
+    description:
+      "DIMARDI watch listing preview. Specifications, condition and pricing will be added when inventory is available.",
+  };
+}
 export function generateStaticParams() {
   return placeholderWatches.map(({ slug }) => ({ slug }));
 }
@@ -44,7 +59,31 @@ export default async function WatchPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  if (!placeholderWatches.some((watch) => watch.slug === slug)) notFound();
+  const watch = placeholderWatches.find((watch) => watch.slug === slug);
+  if (!watch) notFound();
+  if (watch.photos.length) {
+    return (
+      <div className="site-container watch-detail watch-photo-detail">
+        <Breadcrumbs
+          items={[{ label: "Watches", href: "/watches" }, { label: "Watch" }]}
+        />
+        <h1 className="sr-only">Watch</h1>
+        {watch.soldOut && <p className="photo-detail-status">SOLD OUT</p>}
+        <WatchGallery photos={watch.photos} />
+        {watch.description && (
+          <section
+            className="photo-detail-description"
+            aria-labelledby="watch-description-title"
+          >
+            <h2 id="watch-description-title" className="eyebrow">
+              DESCRIPTION
+            </h2>
+            <p>{watch.description}</p>
+          </section>
+        )}
+      </div>
+    );
+  }
   return (
     <div className="site-container watch-detail">
       <Breadcrumbs

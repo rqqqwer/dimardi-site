@@ -5,7 +5,7 @@ import PageHero from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about DIMARDI’s approach to selected pre-owned watches, transparency and personal service.",
+    "Learn about DIMARDI’s focus on brand-new watches, transparency and personal service.",
 };
 export default function AboutPage() {
   return (
@@ -25,7 +25,7 @@ export default function AboutPage() {
               Clearly presented.
             </h2>
             <p>
-              At DIMARDI, we focus on carefully selected pre-owned watches and
+              At DIMARDI, we focus primarily on brand-new watches and
               straightforward personal service.
             </p>
             <p>
@@ -54,10 +54,9 @@ export default function AboutPage() {
           <div>
             <h2>A focused collection.</h2>
             <p>
-              DIMARDI focuses on selected pre-owned watches rather than
-              maintaining an enormous catalogue. Each listing is intended to
-              give you a clear view of the piece, including its condition and
-              the information available about it.
+              Our selection centres on brand-new watches. Each listing is
+              intended to give you a clear view of the piece, including its
+              condition, specifications and accompanying documentation.
             </p>
             <Link className="text-link" href="/watches">
               EXPLORE WATCHES <span aria-hidden="true">↗</span>
